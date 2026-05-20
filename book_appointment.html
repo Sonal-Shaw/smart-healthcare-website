@@ -1,0 +1,45 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+
+{% block title %}Book Appointment{% endblock %}
+
+{% block content %}
+
+<section class="appointment-wrapper">
+
+<div class="appointment-card">
+
+<h2>Book Appointment</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<label>Patient Name</label>
+<input type="text" name="patient_name" required>
+
+<label>Select Doctor</label>
+<select name="doctor">
+{% for doctor in doctors %}
+<option value="{{ doctor.id }}">
+{{ doctor.name }} - {{ doctor.specialization }}
+</option>
+{% endfor %}
+</select>
+
+<label>Date</label>
+<input type="date" name="date" required>
+
+<label>Time</label>
+<input type="time" name="time" required>
+
+<button type="submit" class="appointment-btn">
+Book Appointment
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+{% endblock %}

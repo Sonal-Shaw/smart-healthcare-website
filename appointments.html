@@ -1,0 +1,59 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+{% block title %} Appointments {% endblock %}
+{% block content %}
+
+<section class="page-header">
+  <h1>Book an <span>Appointment</span></h1>
+  <p>Schedule your consultation with our experienced doctors</p>
+</section>
+
+<section class="appointment-section">
+  <div class="booking-card">
+    <h2>Appointment Details</h2>
+
+    <input type="text" placeholder="Patient Name">
+    <input type="email" placeholder="Email Address">
+
+    <select>
+      <option>Select Doctor</option>/
+      <option>Dr. Ananya Sharma – Cardiologist</option>
+      <option>Dr. Rohan Mehta – Dermatologist</option>
+      <option>Dr. Priya Singh – Pediatrician</option>
+      <option>Dr. Amit Kumar – Orthopedic</option>
+      <option>Dr. Neha Shah – Gynecologist</option>
+      <option>Dr. Vivek Khanna – Neurologist</option>
+      <option>Dr. Sneha Malhotra – Endocrinologist</option>
+      <option>Dr. Rahul Jain – General Physician</option>
+    </select>
+
+    <input type="date">
+    <input type="time">
+
+    <button onclick="alert('Appointment Booked Successfully!')">
+      Book Appointment
+    </button>
+  </div>
+
+  <div class="info-card">
+    <h2>Need Online Consultation?</h2>
+    <p>
+      If you prefer consulting from home, you can use our
+      secure teleconsultation feature to connect with doctors
+      through video calls.
+    </p>
+
+    <p>
+      Teleconsultation is available for selected doctors and
+      is ideal for follow-ups and general health queries.
+    </p>
+
+    <a href = "/teleconsult/" class="tele-link">
+      Go to Teleconsultation
+    </a>
+  </div>
+
+</section>
+
+{%endblock%}
+

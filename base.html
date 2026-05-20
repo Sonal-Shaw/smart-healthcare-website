@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'djangoapp/style.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h2>SmartCare</h2>
+
+    <div>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'login' %}">Sign In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+        <a href="{% url 'doctors' %}">Doctors</a>
+        <a href="{% url 'appointment_list' %}">Appointments</a>
+        <a href="{% url 'teleconsult' %}">Teleconsult</a>
+        <a href="{% url 'records' %}">Records</a>
+        <a href="{% url 'book_appointment' %}">Book Appointment</a>
+    </div>
+</nav>
+
+<main>
+{% block content %}
+{% endblock %}
+</main>
+
+<footer class="footer">
+    <p>© 2025 Smart Healthcare Portal</p>
+</footer>
+
+</body>
+</html>

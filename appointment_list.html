@@ -1,0 +1,61 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block content %}
+
+<section class="appointments-section">
+
+<h2 class="appointments-title">Your Appointments</h2>
+
+<div class="appointments-container">
+
+<table class="appointments-table">
+
+<thead>
+<tr>
+<th>Patient Name</th>
+<th>Doctor</th>
+<th>Date</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for appointment in appointments %}
+<tr>
+
+<td>{{ appointment.patient_name }}</td>
+<td>{{ appointment.doctor.name }}</td>
+<td>{{ appointment.date }}</td>
+<td>{{ appointment.time }}</td>
+
+<td>
+<a href="{% url 'delete_appointment' appointment.id %}" class="delete-btn">
+Delete
+</a>
+</td>
+
+</tr>
+{% empty %}
+
+<tr>
+<td colspan="5" class="no-data">
+No appointments booked yet.
+</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+{% endblock %}

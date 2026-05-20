@@ -1,0 +1,59 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+{% block title %} Records {% endblock %}
+{% block content %}
+
+<section class="page-header">
+  <h1>Medical <span>Records</span></h1>
+  <p>Access your health history and digital prescriptions securely</p>
+</section>
+
+<section class="records-section">
+  <div class="card">
+    <h2>Patient Medical History</h2>
+
+    <div class="record">
+      <p><strong>Date:</strong> 12 May 2025</p>
+      <p><strong>Doctor:</strong> Dr. Ananya Sharma</p>
+      <p><strong>Diagnosis:</strong> Mild Hypertension</p>
+    </div>
+
+    <div class="record">
+      <p><strong>Date:</strong> 22 March 2025</p>
+      <p><strong>Doctor:</strong> Dr. Rohan Mehta</p>
+      <p><strong>Diagnosis:</strong> Skin Allergy</p>
+    </div>
+
+    <div class="record">
+      <p><strong>Date:</strong> 15 January 2025</p>
+      <p><strong>Doctor:</strong> Dr. Priya Singh</p>
+      <p><strong>Diagnosis:</strong> Seasonal Fever</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Digital Prescription</h2>
+    <textarea readonly>
+        Patient Name: John Doe
+        Doctor: Dr. Ananya Sharma
+        Date: 12 May 2025
+
+        Medicines:
+        • Amlodipine 5mg – Once daily
+        • Low salt diet recommended
+
+        Notes:
+        • Regular BP monitoring
+        • Follow-up after 1 month
+    </textarea>
+
+    <button onclick="alert('Prescription downloaded successfully!')">
+      Download Prescription
+    </button>
+  </div>
+</section>
+
+{%endblock%}
+
+
+n

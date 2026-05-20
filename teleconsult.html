@@ -1,0 +1,55 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+{% block title %} Teleconsult {% endblock %}
+{% block content %}
+
+<section class="page-header">
+  <h1>Tele<span>consultation</span></h1>
+  <p>Connect with your doctor online through secure video consultation</p>
+</section>
+
+<section class="tele-section">
+  <div class="video-card">
+    <div class="video-placeholder">
+      Video Consultation Window
+    </div>
+
+    <div class="controls">
+      <button class="control-btn">🎤 Mute</button>
+      <button class="control-btn">📷 Camera</button>
+      <button class="control-btn end">End Call</button>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>Appointment Details</h2>
+
+{% if appointment %}
+
+<p><strong>Doctor:</strong> {{ appointment.doctor.name }} ({{ appointment.doctor.specialization }})</p>
+
+<p><strong>Date:</strong> {{ appointment.date }}</p>
+
+<p><strong>Time:</strong> {{ appointment.time }}</p>
+
+<h2>Zoom Meeting Link</h2>
+
+<div class="meeting-link">
+Click the link below to join the meeting:
+<br><br>
+<a href="https://zoom.us/j/1234567890" target="_blank">
+https://zoom.us/j/1234567890
+</a>
+</div>
+
+<p>Please join the meeting 5 minutes before the scheduled time.</p>
+
+{% else %}
+
+<p>No appointment available for teleconsultation.</p>
+
+{% endif %}
+</section>
+
+{%endblock%}
+

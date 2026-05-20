@@ -1,0 +1,45 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+{% block title %} SignUp {% endblock %}
+{% block content %}
+
+<section class="signup-wrapper">
+    <div class="signup-info">
+        <h1>Join <span>SmartCare</span></h1>
+        <p>
+            Create your account to book appointments,
+            consult doctors online, and manage your health digitally.
+        </p>
+
+        <img src="{% static 'djangoapp/image/Health professional team-amico.png' %}" width="350">
+    </div>
+
+    <div class="signup-card">
+        <h2>Create Account</h2>
+        <p>Please fill in the details below</p>
+
+        <form method="POST">
+          {% csrf_token %}
+
+    <input type="text" name="fullname" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+    <div class="terms">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+    </div>
+
+    <button type="submit" class="signup-btn">
+        Sign Up
+    </button>
+</form>
+
+<div class="login-link">
+    Already have an account?
+    <a href="{% url 'login' %}">Login</a>
+</div>
+
+{%endblock%}

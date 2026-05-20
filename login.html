@@ -1,0 +1,59 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<section class="login-wrapper">
+
+<div class="login-info">
+
+<h1>Trends in <span>Healthcare</span></h1>
+
+<p>
+Welcome back! Login to manage appointments,
+consult doctors online, and access your medical records securely.
+</p>
+
+<img src="{% static 'djangoapp/image/Doctor-amico.png' %}" alt="doctor illustration">
+
+</div>
+
+<div class="login-card">
+
+<h2>Healthcare</h2>
+<p>Please login to your account</p>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<div class="options">
+
+<div class="remember">
+<input type="checkbox" id="remember">
+<label for="remember">Remember me</label>
+</div>
+
+<a href="#">Forgot password?</a>
+
+</div>
+
+<button type="submit">Login</button>
+
+</form>
+
+<div class="signup">
+Don't have an account?
+<a href="{% url 'signup' %}">Sign up</a>
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

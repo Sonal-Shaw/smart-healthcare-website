@@ -1,0 +1,43 @@
+{% extends 'djangoapp/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Healthcare that <span>Feels Human</span></h1>
+    <p>Book appointments, consult doctors online, and manage your health digitally.</p>
+    <a href= "/login/">Get Started</a>
+  </div>
+  <img src="{% static 'djangoapp/image/Online Doctor-pana.png' %}">
+</section>
+
+<section class="features">
+  <div class="feature-grid">
+    <div class="feature">
+      <img src="{% static 'djangoapp/image/Medicine-cuate.png' %}" width = 120>
+      <h3>Easy Appointments</h3>
+      <p>Book your doctor in seconds with live availability.</p>
+    </div>
+    <div class="feature">
+      <img src="{% static 'djangoapp/image/Telecommuting-rafiki.png' %}" width = 120>
+      <h3>Teleconsultation</h3>
+      <p>Connect with doctors through secure video calls.</p>
+    </div>
+    <div class="feature">
+      <img src="{% static 'djangoapp/image/Online report-bro.png' %}" width = 120>
+      <h3>Digital Records</h3>
+      <p>Access medical records anytime, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <h2>Your health, simplified.</h2>
+  <p>
+    Experience modern healthcare with seamless appointments,  
+    trusted doctors, and secure digital records — all in one place.
+  </p>
+</section>
+
+{%endblock%}
